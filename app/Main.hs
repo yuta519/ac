@@ -1,8 +1,13 @@
 module Main (main) where
 
-import HelloWorld (say)
+import ABC042 (solveA, solveB)
+import IOUtils (getLineXTimes)
 
 main :: IO ()
 main = do
-  putStrLn "Hello, Haskell!"
-  print say
+  input <- getLine
+  let n = case words input of
+        (x : _) -> x
+        [] -> "0"
+  inputs <- getLineXTimes $ read n
+  putStrLn $ solveB inputs
