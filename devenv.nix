@@ -10,14 +10,24 @@
 
     # Toolchain
     ghc                       # GHC compiler
+    # Haskell toolchain (custom GHC with packages)
+    (pkgs.haskellPackages.ghcWithPackages (ps: with ps; [
+      containers      # <- you need this for Data.Set
+      text            # commonly needed
+      bytestring      # commonly needed
+      # add more if needed
+    ]))
     cabal-install             # Cabal
     stack                     # Optional, if you use Stack projects
     haskell-language-server   # HLS (the LSP server)
 
     # Formatting & linting (pick one formatter)
-    fourmolu
+    # fourmolu
+    ormolu
     hlint
   ];
+  languages.haskell.enable = true;
+  languages.haskell.package = pkgs.haskell.compiler.ghc96;
 
   # https://devenv.sh/languages/
   # languages.rust.enable = true;
