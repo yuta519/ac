@@ -14,3 +14,15 @@ unhappyHacking (x : xs) cur = case x of
   '1' -> unhappyHacking xs (cur ++ [x])
   'B' -> unhappyHacking xs (if (length cur) > 0 then init cur else cur)
   _ -> cur
+
+solveB' :: String -> String
+solveB' s = reverse $ foldl process [] s
+  where
+    process :: String -> Char -> String
+    process stack c = case c of
+      '0' -> c : stack
+      '1' -> c : stack
+      'B' -> case stack of
+        [] -> []
+        (_ : xs) -> xs
+      _ -> stack
