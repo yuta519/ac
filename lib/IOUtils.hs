@@ -1,8 +1,11 @@
-module IOUtils (getInt, getLineXTimes, readMultiLinesFile) where
+module IOUtils (getInt, getInts, getLineXTimes, readMultiLinesFile) where
 
 getInt :: IO (Int)
 -- getInt = read <$> getLine
 getInt = fmap read getLine
+
+getInts :: IO [Int]
+getInts = fmap read <$> words <$> getLine
 
 getLineXTimes :: Int -> IO [String]
 getLineXTimes x = sequence $ replicate x getLine

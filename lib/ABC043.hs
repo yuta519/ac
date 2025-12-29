@@ -26,3 +26,11 @@ solveB' s = reverse $ foldl process [] s
         [] -> []
         (_ : xs) -> xs
       _ -> stack
+
+solveC :: [Int] -> Int
+solveC a = if fCost < cCost then fCost else cCost
+  where
+    f = floor (fromIntegral (sum a) / fromIntegral (length a))
+    c = ceiling (fromIntegral (sum a) / fromIntegral (length a))
+    fCost = sum [(x - f) ^ 2 | x <- a]
+    cCost = sum [(x - c) ^ 2 | x <- a]
