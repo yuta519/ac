@@ -10,5 +10,10 @@ This is the author's private project to practic Haskell and work on [AtCoder](ht
 ## Run main 
 ```bash
 $runghc -ilib app/Main.hs
+
+or
+
+$cabal build
+$cabal run ac
 ```
 
