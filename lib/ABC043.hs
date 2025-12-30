@@ -34,3 +34,17 @@ solveC a = if fCost < cCost then fCost else cCost
     c = ceiling (fromIntegral (sum a) / fromIntegral (length a))
     fCost = sum [(x - f) ^ 2 | x <- a]
     cCost = sum [(x - c) ^ 2 | x <- a]
+
+solveD :: String -> (Int, Int)
+solveD s = verifyBalance s 1
+
+verifyBalance :: String -> Int -> (Int, Int)
+verifyBalance s i = case s of
+  (a : b : c : xs)
+    | a == b -> (i, i + 1)
+    | a == b || a == c || b == c -> (i, i + 2)
+    | otherwise -> verifyBalance (b : c : xs) (i + 1)
+  (a : b : [])
+    | a == b -> (i, i + 1)
+    | otherwise -> (-1, -1)
+  _ -> (-1, -1)

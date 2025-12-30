@@ -1,10 +1,11 @@
 module Main (main) where
 
 import ABC043
-import IOUtils
+
+-- import IOUtils
 
 main :: IO ()
 main = do
-  _ <- getLine
-  a <- getInts
-  print $ solveC a
+  s <- getLine
+  let (start, end) = solveD s
+  putStrLn $ show start ++ " " ++ show end
