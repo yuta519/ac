@@ -60,6 +60,7 @@ library
         IOUtils
         ABC042
         ABC043
+        ABC044
         AdventOfCode2025Day1
     build-depends: containers, base >= 4.18 && < 5
     default-language: Haskell2010
