@@ -17,3 +17,7 @@ solveB' w = if foldl xor 0 (map bitOf w) == 0 then "Yes" else "No"
 
 bitOf :: Char -> Int
 bitOf char = shiftL 1 (ord char - ord 'a') -- eaual to 1 << char
+
+-- TODO: Skip this problem first. Will come back after learning DP
+solveC :: Int
+solveC = 0
