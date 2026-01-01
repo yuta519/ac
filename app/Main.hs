@@ -1,11 +1,10 @@
 module Main (main) where
 
-import ABC044
-
--- import IOUtils
+import ABC061
+import IOUtils
 
 main :: IO ()
 main = do
-  w <- getLine
-
-  putStrLn $ solveB w
+  [n, m] <- getInts
+  roads <- getLineXTimes m
+  mapM_ print $ solveB n [(a, b) | road <- roads, let [a, b] = fmap (read :: String -> Int) $ words road]
