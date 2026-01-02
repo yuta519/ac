@@ -22,21 +22,14 @@
     haskell-language-server   # HLS (the LSP server)
 
     # Formatting & linting (pick one formatter)
-    # fourmolu
     ormolu
     hlint
   ];
   languages.haskell.enable = true;
   languages.haskell.package = pkgs.haskell.compiler.ghc96;
 
-  # https://devenv.sh/languages/
-  # languages.rust.enable = true;
-
   # https://devenv.sh/processes/
   # processes.dev.exec = "${lib.getExe pkgs.watchexec} -n -- ls -la";
-
-  # https://devenv.sh/services/
-  # services.postgres.enable = true;
 
   # https://devenv.sh/scripts/
   scripts.hello.exec = ''
