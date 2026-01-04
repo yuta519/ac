@@ -63,6 +63,7 @@ library
         ABC044
         ABC061
         ABC163
+        ABC166
         AdventOfCode2025Day1
     build-depends: array, containers, base >= 4.18 && < 5
     default-language: Haskell2010
