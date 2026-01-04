@@ -24,6 +24,10 @@
     # Formatting & linting (pick one formatter)
     ormolu
     hlint
+
+    (python3.withPackages (ps: with ps; [
+      online-judge-tools
+    ]))
   ];
   languages.haskell.enable = true;
   languages.haskell.package = pkgs.haskell.compiler.ghc96;
