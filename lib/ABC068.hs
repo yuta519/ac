@@ -1,19 +1,16 @@
 module ABC068 where
 
 import Data.Array
+import Data.Graph
 import qualified Data.IntSet as S
 
 solveC :: Int -> [(Int, Int)] -> Bool
 solveC 0 [] = False
 solveC n boats =
-  let adj =
-        accumArray
-          (++)
-          []
-          (1, n)
-          ([(a, [b]) | (a, b) <- boats] ++ [(b, [a]) | (a, b) <- boats])
-      fromFirst = adj ! 1
-      fromN = S.fromList (adj ! n)
+  let edges = boats ++ map (\(a, b) -> (b, a)) boats
+      graph = buildG (1, n) edges
+      fromFirst = graph ! 1
+      fromN = S.fromList (graph ! n)
    in any (`S.member` fromN) fromFirst
 
 neighboarsOfX :: [(Int, Int)] -> Int -> [Int]
