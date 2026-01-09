@@ -6,12 +6,8 @@ import qualified Data.IntSet as S
 
 solveC :: Int -> [(Int, Int)] -> Bool
 solveC 0 [] = False
-solveC n boats =
-  let edges = boats ++ map (\(a, b) -> (b, a)) boats
+solveC n list =
+  let edges = list ++ map (\(a, b) -> (b, a)) list
       graph = buildG (1, n) edges
-      fromFirst = graph ! 1
-      fromN = S.fromList (graph ! n)
-   in any (`S.member` fromN) fromFirst
-
-neighboarsOfX :: [(Int, Int)] -> Int -> [Int]
-neighboarsOfX edges x = concatMap (\(a, b) -> [b | a == x] ++ [a | b == x]) edges
+      ans = filter (\(_, i) -> 1 `elem` i && n `elem` i) $ assocs graph
+   in not (null ans)

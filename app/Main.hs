@@ -7,5 +7,5 @@ main :: IO ()
 main = do
   [n, m] <- getInts
   inputs <- getLineXTimes m
-  let boats = [(\[x, y] -> (x, y)) $ map read $ words a | a <- inputs] :: [(Int, Int)]
-  putStrLn $ if (solveC n boats) then "POSSIBLE" else "IMPOSSIBLE"
+  let list = [(\[x, y] -> (x, y)) $ map read $ words a | a <- inputs] :: [(Int, Int)]
+  putStrLn $ if (solveC n list) then "POSSIBLE" else "IMPOSSIBLE"
