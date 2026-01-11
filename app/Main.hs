@@ -1,9 +1,9 @@
 module Main (main) where
 
-import ABC086
+import ABC081
 import IOUtils
 
 main :: IO ()
 main = do
-  [a, b] <- getInts
-  putStrLn $ solveA a b
+  s <- getInt
+  print $ solveA s
