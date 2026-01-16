@@ -12,5 +12,3 @@ sub :: [Int] -> Int
 sub (a : b : xs) = (a - b) + (sub xs)
 sub [a] = a
 sub [] = 0
-
--- [a | a <- sortBy (flip compare) as]
