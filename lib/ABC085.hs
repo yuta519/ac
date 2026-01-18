@@ -3,7 +3,7 @@ module ABC085 where
 import Data.List
 
 solveB :: [Int] -> Int
-solveB xs = kagamiMochi $ sort xs
+solveB xs = kagamiMochi $ nub $ sort xs
 
 kagamiMochi :: [Int] -> Int
 kagamiMochi [] = 0
