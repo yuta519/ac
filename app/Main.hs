@@ -5,7 +5,6 @@ import IOUtils
 
 main :: IO ()
 main = do
-  n <- getInt
-  as <- getLineXTimes n
-
-  print $ solveB [read a :: Int | a <- as]
+  [n, y] <- getInts
+  let (a, b, c) = solveC n y
+  putStrLn $ show a ++ " " ++ show b ++ " " ++ show c
