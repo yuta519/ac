@@ -1,10 +1,8 @@
 module Main (main) where
 
-import ABC085
-import IOUtils
+import ABC049
 
 main :: IO ()
 main = do
-  [n, y] <- getInts
-  let (a, b, c) = solveC n y
-  putStrLn $ show a ++ " " ++ show b ++ " " ++ show c
+  s <- getLine
+  putStrLn $ if solveC s then "YES" else "NO"
