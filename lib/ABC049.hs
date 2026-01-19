@@ -2,6 +2,15 @@ module ABC049 where
 
 import Data.List
 
+solveA :: Char -> Bool
+solveA s = case s of
+  'a' -> True
+  'e' -> True
+  'i' -> True
+  'o' -> True
+  'u' -> True
+  _ -> False
+
 solveC :: String -> Bool
 solveC s = go (reverse s)
   where
