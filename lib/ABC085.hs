@@ -25,24 +25,8 @@ We can reduce to one loop using algebra:
 Substitute c:
   9000a + 4000b = y - 1000n
 
-Then:
-```haskell
-solveC :: Int -> Int -> (Int, Int, Int)
-solveC n y = go 0
-  where
-    target = y - 1000 * n
-    go a
-      | a > n = (-1, -1, -1)
-      | (target - 9000*a) `mod` 4000 /= 0 = go (a + 1)
-      | otherwise =
-          let b = (target - 9000*a) `div` 4000
-              c = n - a - b
-          in if b >= 0 && c >= 0
-             then (a, b, c)
-             else go (a + 1)
-
 Now:
-  ⏱ O(n)
+  ⏱ O(n))
   💾 Constant memory
   🧠 Uses math insight
  - --}
