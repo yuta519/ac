@@ -18,7 +18,6 @@
       # add more if needed
     ]))
     cabal-install             # Cabal
-    stack                     # Optional, if you use Stack projects
     haskell-language-server   # HLS (the LSP server)
 
     # Formatting & linting (pick one formatter)
