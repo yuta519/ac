@@ -11,6 +11,9 @@ solveA s = case s of
   'u' -> True
   _ -> False
 
+solveB :: [String] -> [String]
+solveB cs = concat [[c, c] | c <- cs]
+
 solveC :: String -> Bool
 solveC s = go (reverse s)
   where

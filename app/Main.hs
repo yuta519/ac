@@ -1,13 +1,11 @@
 module Main (main) where
 
-import ABC086
+import ABC049
+import Control.Monad
 import IOUtils
 
 main :: IO ()
 main = do
-  n <- getInt
-  xs <- getLineXTimes n
-
-  let points = [(read t, read x, read y) | line <- xs, let [t, x, y] = words line] :: [(Int, Int, Int)]
-
-  putStrLn $ if solveC points then "Yes" else "No"
+  [h, _w] <- getInts
+  xs <- getLineXTimes h
+  forM_ (solveB xs) putStrLn
