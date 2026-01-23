@@ -1,11 +1,9 @@
 module Main (main) where
 
-import ABC049
-import Control.Monad
+import ABC061
 import IOUtils
 
 main :: IO ()
 main = do
-  [h, _w] <- getInts
-  xs <- getLineXTimes h
-  forM_ (solveB xs) putStrLn
+  [a, b, c] <- getInts
+  putStrLn $ if solveA (a, b, c) then "Yes" else "No"

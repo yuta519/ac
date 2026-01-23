@@ -1,5 +1,8 @@
 module ABC061 where
 
+solveA :: (Int, Int, Int) -> Bool
+solveA (a, b, c) = a <= c && c <= b
+
 solveB :: Int -> [(Int, Int)] -> [Int]
 solveB n roads = foldl roundCountTransition (replicate n 0) roads
 
