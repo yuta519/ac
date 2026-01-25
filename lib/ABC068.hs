@@ -4,6 +4,9 @@ import Data.Array
 import Data.Graph
 import qualified Data.IntSet as S
 
+solveA :: Int -> String
+solveA n = "ABC" ++ show n
+
 solveC :: Int -> [(Int, Int)] -> Bool
 solveC 0 [] = False
 solveC n list =
