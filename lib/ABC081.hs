@@ -1,7 +1,7 @@
 module ABC081 where
 
 import Data.Array.Unboxed
-import Data.List (sort)
+import Data.List (group, sort)
 import qualified Data.Map.Strict as M
 
 solveA :: Int -> Int
@@ -25,11 +25,15 @@ count2power n
 --
 -- example: k=2, as=[1, 1, 2, 2, 5]
 -- { 1: 2, 2: 2, 5: 1 }
--- solveC :: Int -> [Int] -> Int
--- solveC k as = 0
---   where
---     counter :: UArray Int Int
---     counter = accumArray (+) 0 (1, length as) [(a, 1) | a <- as]
+solveC :: Int -> [Int] -> Int
+solveC k as
+  | m <= k = 0
+  | otherwise = sum $ take (m - k) freq
+  where
+    counter :: UArray Int Int
+    counter = accumArray (+) 0 (1, length as) [(a, 1) | a <- as]
+    freq = sort [c | c <- elems counter, c > 0]
+    m = length freq
 
 solveC' :: Int -> [Int] -> Int
 solveC' k as
@@ -38,3 +42,8 @@ solveC' k as
   where
     freqs = sort . M.elems $ M.fromListWith (+) [(a, 1) | a <- as]
     m = length freqs
+
+solveC'' :: Int -> [Int] -> Int
+solveC'' k nums = if length bucket <= k then 0 else sum $ take (length bucket - k) bucket
+  where
+    bucket = sort $ map length (group $ sort $ nums)

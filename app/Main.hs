@@ -7,4 +7,4 @@ main :: IO ()
 main = do
   [_n, k] <- getInts
   as <- getInts
-  print $ solveC' k as
+  print $ solveC k as
