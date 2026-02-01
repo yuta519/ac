@@ -56,7 +56,6 @@ common warnings
 library
     hs-source-dirs: lib
     exposed-modules:
-        HelloWorld
         IOUtils
         ABC042
         ABC043
