@@ -5,6 +5,15 @@ import Data.List (foldl')
 solveA :: Int -> Int -> String
 solveA a b = if (a * b) `mod` 2 == 0 then "Even" else "Odd"
 
+solveB :: Int -> Int -> String
+solveB a b = go 1
+  where
+    x = (read $ show a ++ show b :: Int)
+    go n
+      | n * n == x = "Yes"
+      | n * n > x = "No"
+      | otherwise = go (n + 1)
+
 solveC :: [(Int, Int, Int)] -> Bool
 solveC =
   fst . foldl' step (True, (0, 0, 0))
