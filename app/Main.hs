@@ -1,9 +1,11 @@
 module Main (main) where
 
-import AGC024
+import ABC065
 import IOUtils
 
 main :: IO ()
 main = do
-  [a, b, c, k] <- getInts
-  print $ solveA a b c k
+  n <- getInt
+  xs <- getLineXTimes n
+
+  print $ solveB [read x | x <- xs]
