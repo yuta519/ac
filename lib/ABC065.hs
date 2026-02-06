@@ -3,6 +3,12 @@ module ABC065 where
 import qualified Data.Array.Unboxed as U
 import Data.Set
 
+solveA :: Int -> Int -> Int -> String
+solveA x a b
+  | a >= b = "delicious"
+  | x + a >= b = "safe"
+  | otherwise = "dangerous"
+
 -- 3 1 2
 -- 1 ()
 -- 3 (1)
