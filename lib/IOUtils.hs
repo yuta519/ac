@@ -1,6 +1,9 @@
-module IOUtils (getInt, getInts, getLineXTimes, readMultiLinesFile) where
+module IOUtils (getInt, getInteger, getInts, getLineXTimes, readMultiLinesFile) where
 
 import Control.Monad
+
+getInteger :: IO (Integer)
+getInteger = fmap read getLine
 
 getInt :: IO (Int)
 -- getInt = read <$> getLine
