@@ -2,6 +2,13 @@ module ABC122 where
 
 import Data.Array
 
+solveA :: Char -> Char
+solveA b
+  | b == 'A' = 'T'
+  | b == 'T' = 'A'
+  | b == 'C' = 'G'
+  | b == 'G' = 'C'
+
 -- Convert input String to Char Array
 -- Create the Array to store the positions which is possible to make "AC" (The position should 'C')
 -- Create the cumulative sum (cs) from the AC array
