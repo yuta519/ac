@@ -25,7 +25,7 @@ $ oj download https://atcoder.jp/contests/abc166/tasks/abc166_c
 ```
 - Run tests locally
 ```bash
-$ oj t -c " runghc -ilib app/Main.hs"
+$ oj t -c "runghc -ilib app/Main.hs"
 ```
 - Once you finished the problem, please remove test files under `test` directory
 ```bash
