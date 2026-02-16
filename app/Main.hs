@@ -1,10 +1,10 @@
 module Main (main) where
 
-import ABC165
+import ABC089
 import IOUtils
 
 main :: IO ()
 main = do
-  [a, b, n] <- getInts
+  n <- getInt
 
-  print $ solveD a b n
+  print $ solveA n
