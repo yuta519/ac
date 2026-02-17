@@ -1,11 +1,10 @@
 module Main (main) where
 
-import ABC089
+import ABC163
 import IOUtils
 
 main :: IO ()
 main = do
-  _ <- getInt
-  s <- words <$> getLine
+  r <- (read <$> getLine) :: IO Float
 
-  putStrLn $ solveB s
+  print $ solveA r
