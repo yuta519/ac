@@ -1,11 +1,10 @@
 module Main (main) where
 
-import ABC089
+import ABC109
 import IOUtils
 
 main :: IO ()
 main = do
-  n <- getInt
-  names <- getLineXTimes n
+  [a, b] <- getInts
 
-  print $ solveC names
+  putStrLn $ solveA a b
