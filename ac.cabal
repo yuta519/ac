@@ -81,6 +81,7 @@ library
         ABC204
         AdventOfCode2025Day1
         AGC002
+        AGC010
         AGC024
         Typical10
     build-depends: array, containers, base >= 4.18 && < 5
