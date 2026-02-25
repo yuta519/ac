@@ -1,11 +1,10 @@
 module Main (main) where
 
-import AGC010
+import ABC175
 import IOUtils
 
 main :: IO ()
 main = do
-  _ <- getInt
-  as <- getLine
+  [x, k, d] <- getInts
 
-  putStrLn $ solveA $ map read (words as)
+  print $ solveC x k d
