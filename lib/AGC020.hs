@@ -1,4 +1,44 @@
 module AGC020 where
 
+-- d=B−A
+-- example:
+--  1 2 3 4 5
+--    A   B
+--    d = 4 - 2 = 2
+--
+-- Each turn:
+-- A player moves their own token
+--  - exactly ±1
+--  - cannot enter the opponent’s cell
+--  - cannot leave the board
+--
+-- So every move changes the distance d.
+--
+-- Alice moves
+-- If Alice moves toward Borys:
+-- A -> A+1
+-- distance becomes d → d - 1
+-- if she moves away, d → d + 1
+--
+-- ✅ Every move changes d by exactly ±1.
+--
+-- A player loses when they cannot move.
+-- This happens when the tokens become adjacent: AB
+--
+-- Optimal play observation
+-- Moving away only delays losing.
+-- Why?
+--  - Increasing distance gives the opponent more space too.
+--  - No traps or asymmetry exist.
+--  - Board edges never help permanently.
+-- So optimal play is effectively:
+-- 👉 both players keep decreasing distance whenever possible.
+--
+-- Thus the game behaves like:
+--
+-- start from d
+-- each turn: d -= 1
+-- loser sees d = 1
+--
 solveA :: Int -> Int -> String
-solveA a b = if (b - a) `mod` 2 == 0 then "Alice" else "Borys"
+solveA a b = if even $ b - a then "Alice" else "Borys"
