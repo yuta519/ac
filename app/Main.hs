@@ -1,10 +1,11 @@
 module Main (main) where
 
-import AGC020
-import IOUtils
+import ABC166
+
+-- import IOUtils
 
 main :: IO ()
 main = do
-  [_, a, b] <- getInts
+  s <- getLine
 
-  putStrLn $ solveA a b
+  putStrLn $ solveA s

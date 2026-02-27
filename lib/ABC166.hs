@@ -2,6 +2,9 @@ module ABC166 where
 
 import Data.Array
 
+solveA :: String -> String
+solveA s = if s == "ABC" then "ARC" else "ABC"
+
 solveC :: Int -> [Int] -> [(Int, Int)] -> Int
 solveC 0 [] [] = 0
 solveC n heights roads =
