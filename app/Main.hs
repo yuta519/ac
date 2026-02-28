@@ -1,11 +1,11 @@
 module Main (main) where
 
-import ABC166
-
--- import IOUtils
+import ABC125
+import IOUtils
 
 main :: IO ()
 main = do
-  s <- getLine
+  _ <- getInt
+  as <- getInts
 
-  putStrLn $ solveA s
+  print $ solveD as
