@@ -2,6 +2,8 @@
 
 ## Overview
 This is the author's private project to practic Haskell and work on [AtCoder](https://atcoder.jp/) problems with Haskell. 
+You can find problems [here](https://kenkoooo.com/atcoder/#/table/) 
+
 
 ## Requirements
 - Nix
@@ -31,6 +33,3 @@ $ oj t -c "runghc -ilib app/Main.hs"
 ```bash
 $ rm test/*
 ```
-
-## References
-- You can find problems [here](https://kenkoooo.com/atcoder/#/table/)
