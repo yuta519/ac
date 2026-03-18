@@ -3,19 +3,11 @@ module ABC043 where
 solveA :: Int -> Int
 solveA n = div (n * (n + 1)) 2
 
+-- Use reverse due to the speed efficiency
+-- In Haskell, ++ operation is slow.
+-- By adding to a front and reversing, this avoid adding tail and improve performance.
 solveB :: String -> String
-solveB s = unhappyHacking s ""
-
-unhappyHacking :: String -> String -> String
-unhappyHacking [] cur = cur
-unhappyHacking (x : xs) cur = case x of
-  '0' -> unhappyHacking xs (cur ++ [x])
-  '1' -> unhappyHacking xs (cur ++ [x])
-  'B' -> unhappyHacking xs (if (length cur) > 0 then init cur else cur)
-  _ -> cur
-
-solveB' :: String -> String
-solveB' s = reverse $ foldl process [] s
+solveB s = reverse $ foldl process [] s
   where
     process :: String -> Char -> String
     process stack c = case c of
