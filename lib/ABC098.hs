@@ -2,6 +2,9 @@ module ABC098 where
 
 import Data.List
 
+solveA :: Int -> Int -> Int
+solveA a b = maximum [a + b, a - b, a * b]
+
 solveC :: String -> Int
 solveC s = minimum $ zipWith (+) left right
   where
