@@ -9,6 +9,17 @@ solveA b
   | b == 'C' = 'G'
   | b == 'G' = 'C'
 
+solveB :: String -> Int
+solveB s = go 0 0 s
+  where
+    go mx cur str
+      | null str = mx
+      | head str `elem` "ACGT" =
+          let cur' = cur + 1
+              mx' = max mx cur'
+           in go mx' cur' (tail str)
+      | otherwise = go mx 0 (tail str)
+
 -- Convert input String to Char Array
 -- Create the Array to store the positions which is possible to make "AC" (The position should 'C')
 -- Create the cumulative sum (cs) from the AC array
