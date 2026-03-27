@@ -2,6 +2,9 @@ module ABC125 where
 
 import Data.List
 
+solveA :: Int -> Int -> Int -> Int
+solveA a b t = (t `div` a) * b
+
 solveC :: [Int] -> Int
 solveC ns = maximum $ zipWith gcd left right
   where
