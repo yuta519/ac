@@ -5,6 +5,9 @@ import Data.List
 solveA :: Int -> Int -> Int -> Int
 solveA a b t = (t `div` a) * b
 
+solveB :: [Int] -> [Int] -> Int
+solveB v c = sum $ zipWith (\l r -> if l - r > 0 then l - r else 0) v c
+
 solveC :: [Int] -> Int
 solveC ns = maximum $ zipWith gcd left right
   where
