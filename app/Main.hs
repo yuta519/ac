@@ -5,6 +5,8 @@ import IOUtils
 
 main :: IO ()
 main = do
-  [n, k] <- getInts
+  n <- getInt
+  xs <- getLineXTimes n
+  let elects = map ((\[a, b] -> (read a, read b)) . words) xs
 
-  print $ solveB n k
+  print $ solveC elects
