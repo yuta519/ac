@@ -1,12 +1,10 @@
 module Main (main) where
 
-import ABC046
+import ABC047
 import IOUtils
 
 main :: IO ()
 main = do
-  n <- getInt
-  xs <- getLineXTimes n
-  let elects = map ((\[a, b] -> (read a, read b)) . words) xs
+  [a, b, c] <- getInts
 
-  print $ solveC elects
+  putStrLn $ solveA a b c
