@@ -5,7 +5,6 @@ import IOUtils
 
 main :: IO ()
 main = do
-  [_, k] <- getInts
   s <- getLine
 
-  putStrLn $ solveA k s
+  putStrLn $ solveB s
