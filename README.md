@@ -22,7 +22,6 @@ $ cabal run ac
 ## Test with online-judege-tools/oj
 - Download test cases
 ```bash
-# This URL is an example
 $ oj download https://atcoder.jp/contests/abc166/tasks/abc166_c
 ```
 - Run tests locally
