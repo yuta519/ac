@@ -22,3 +22,8 @@ solveB s =
         (True, False) -> "MMYY"
         (False, True) -> "YYMM"
         (False, False) -> "NA"
+
+solveC :: Int -> Int -> Int -> [Int]
+solveC r d x2000 = take 10 $ tail $ iterate next x2000
+  where
+    next x = r * x - d
