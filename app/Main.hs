@@ -1,9 +1,10 @@
 module Main (main) where
 
-import ABC128
+import ABC126
 import IOUtils
+import Text.Printf (printf)
 
 main :: IO ()
 main = do
-  [a, p] <- getInts
-  print $ solveA a p
+  [n, k] <- getInts
+  printf "%.12f\n" (solveC n k)
