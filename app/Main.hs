@@ -1,13 +1,10 @@
 module Main (main) where
 
-import ABC128
+import ABC129
 import IOUtils
-import Text.Printf (printf)
 
 main :: IO ()
 main = do
-  n <- getInt
-  xs <- getLineXTimes n
-  let xs' = [(a, read b) | x <- xs, let [a, b] = words x] :: [(String, Int)]
+  hours <- getInts
 
-  mapM_ print $ solveB xs'
+  print $ solveA hours
