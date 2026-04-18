@@ -5,6 +5,7 @@ import IOUtils
 
 main :: IO ()
 main = do
-  hours <- getInts
+  _ <- getLine
+  ws <- getInts
 
-  print $ solveA hours
+  print $ solveB ws
