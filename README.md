@@ -1,7 +1,7 @@
 # ac (AtCoder)
 
 ## Overview
-This is the author's private project to practic Haskell and work on [AtCoder](https://atcoder.jp/) problems with Haskell. 
+This is the author's private project to practice Haskell and work on [AtCoder](https://atcoder.jp/) problems with Haskell. 
 You can find problems [here](https://kenkoooo.com/atcoder/#/table/) 
 
 
