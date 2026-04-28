@@ -1,10 +1,11 @@
 module Main (main) where
 
-import ABC131
+import ABC130
 import IOUtils
 
 main :: IO ()
 main = do
-  passcode <- getLine
+  [n, k] <- getInts
+  as <- getInts
 
-  putStrLn $ solveA passcode
+  print $ solveD n k as
