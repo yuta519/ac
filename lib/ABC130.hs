@@ -1,5 +1,6 @@
 module ABC130 where
 
+import Data.Array.Unboxed
 import Data.List (scanl')
 
 solveA :: Int -> Int -> Int
@@ -18,19 +19,11 @@ solveC w h x y
 solveD :: Int -> Int -> [Int] -> Int
 solveD n k as = go 0 0 0 0
   where
-    -- 6, 1, 2, 7
-    -- (0, 0) 0+6-6+6 = 6
-    -- (0, 1) 6+6-6+1 = 7
-    -- (0, 2) 7+6-6+2 = 9
-    -- (0, 3) 9+6-6+7 = 16 !!
-    -- (0, 3) 9+6-6+7 = 16 !!
-    -- go left right currentSum res
-    --   | left == n = res
-    --   | currentSum < k && right < n = go left (right + 1) (currentSum + as !! right) res
-    --   | currentSum >= k = go (left + 1) right (currentSum - (as !! left)) (res + n - right)
-    --   | otherwise = res
+    arr :: UArray Int Int
+    arr = listArray (0, n - 1) as
+
     go left right sum res
       | left == n = res
-      | sum < k && right < n = go left (right + 1) (sum + as !! right) res
-      | sum >= k = go (left + 1) right (sum - as !! left) (res + (n - right + 1))
+      | sum < k && right < n = go left (right + 1) (sum + arr ! right) res
+      | sum >= k = go (left + 1) right (sum - arr ! left) (res + (n - right + 1))
       | otherwise = res
