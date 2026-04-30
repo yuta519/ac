@@ -11,3 +11,8 @@ solveB n l
   | l == 0 || l < 0 && (n + l) > 0 = sum $ map (+ l) [0 .. n - 1]
   | l > 0 = sum $ tail $ map (+ l) [0 .. n - 1]
   | l < 0 = sum $ init $ map (+ l) [0 .. n - 1]
+
+solveC :: Integer -> Integer -> Integer -> Integer -> Integer
+solveC a b c d = b - a + 1 - count a b c - count a b d + count a b (lcm c d)
+  where
+    count lo hi x = hi `div` x - (lo - 1) `div` x

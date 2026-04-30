@@ -1,4 +1,4 @@
-module IOUtils (getInt, getInteger, getInts, getLineXTimes, readMultiLinesFile) where
+module IOUtils (getInt, getInteger, getInts, getIntegers, getLineXTimes, readMultiLinesFile) where
 
 import Control.Monad
 
@@ -11,6 +11,9 @@ getInt = fmap read getLine
 
 getInts :: IO [Int]
 getInts = fmap read <$> words <$> getLine
+
+getIntegers :: IO [Integer]
+getIntegers = fmap read <$> words <$> getLine
 
 getLineXTimes :: Int -> IO [String]
 -- getLineXTimes x = sequence $ replicate x getLine

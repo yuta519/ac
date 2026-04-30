@@ -5,6 +5,6 @@ import IOUtils
 
 main :: IO ()
 main = do
-  [n, l] <- getInts
+  [a, b, c, d] <- getIntegers
 
-  print $ solveB n l
+  print $ solveC a b c d
