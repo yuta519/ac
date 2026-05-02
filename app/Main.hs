@@ -5,6 +5,7 @@ import IOUtils
 
 main :: IO ()
 main = do
-  [a, b, c, d] <- getIntegers
+  n <- getInt
+  inputs <- getLineXTimes n
 
-  print $ solveC a b c d
+  putStrLn $ solveD [let [a, b] = map read (words input) in (a, b) | input <- inputs]
