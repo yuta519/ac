@@ -12,5 +12,7 @@ solveA s = if all (== 2) [freq | (_, freq) <- toList charFreq] then "Yes" else "
 solveB :: [Int] -> Int
 solveB ps = go ps 0
   where
-    go (x : y : z : ps) count = if (x < y && y < z) || (x > y && y > z) then go (y : z : ps) (count + 1) else go (y : z : ps) count
+    go (x : y : z : ps) count
+      | (x < y && y < z) || (x > y && y > z) = go (y : z : ps) (count + 1)
+      | otherwise = go (y : z : ps) count
     go (_ : _ : _) count = count
