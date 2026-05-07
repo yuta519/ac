@@ -1,6 +1,6 @@
 module ABC132 where
 
-import Data.List (foldl')
+import Data.List (foldl', sort)
 import Data.Map (empty, insertWith, toList)
 
 solveA :: String -> String
@@ -16,3 +16,10 @@ solveB ps = go ps 0
       | (x < y && y < z) || (x > y && y > z) = go (y : z : ps) (count + 1)
       | otherwise = go (y : z : ps) count
     go (_ : _ : _) count = count
+
+solveC :: Int -> [Int] -> Int
+solveC n ds = length [a + 1 .. b]
+  where
+    ds' = sort ds
+    a = ds' !! (n `div` 2 - 1)
+    b = ds' !! (n `div` 2)
