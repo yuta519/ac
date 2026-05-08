@@ -1,11 +1,11 @@
 module Main (main) where
 
-import ABC132
+import ABC133
 import IOUtils
 
 main :: IO ()
 main = do
-  n <- getInt
-  ds <- getInts
+  [n, _] <- getInts
+  xs <- getLineXTimes n
 
-  print $ solveC n ds
+  print $ solveB [map read (words x) | x <- xs]
