@@ -12,9 +12,7 @@ You can find problems [here](https://kenkoooo.com/atcoder/#/table/)
 ## Run main 
 ```bash
 $ runghc -ilib app/Main.hs
-
 or
-
 $ cabal build
 $ cabal run ac
 ```
