@@ -13,3 +13,8 @@ solveB a = go a 0
     isSquareInt n = r * r == n
       where
         r = floor . sqrt $ fromIntegral n
+
+solveC :: Int -> Int -> Int
+solveC l r
+  | r - l >= 2019 = 0
+  | otherwise = minimum [(i * j) `mod` 2019 | i <- [l .. r - 1], j <- [i + 1 .. r]]

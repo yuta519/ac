@@ -5,7 +5,6 @@ import IOUtils
 
 main :: IO ()
 main = do
-  [n, _] <- getInts
-  xs <- getLineXTimes n
+  [l, r] <- getInts
 
-  print $ solveB [map read (words x) | x <- xs]
+  print $ solveC l r
