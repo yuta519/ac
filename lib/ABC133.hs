@@ -10,7 +10,6 @@ solveB a = go a 0
     go (x : xs) cur = go xs (cur + sum [if isSquareInt $ sum $ map (^ 2) (zipWith (-) x y) then 1 else 0 | y <- xs])
 
     isSquareInt :: Int -> Bool
-    isSquareInt n =
-      r * r == n
+    isSquareInt n = r * r == n
       where
         r = floor . sqrt $ fromIntegral n
