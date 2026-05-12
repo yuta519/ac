@@ -6,7 +6,7 @@ You can find problems [here](https://kenkoooo.com/atcoder/#/table/)
 
 
 ## Requirements
-- Nix
+- [Nix](https://nixos.org/)
 - [devenv.sh](https://devenv.sh/getting-started/)
 
 ## Run main 
