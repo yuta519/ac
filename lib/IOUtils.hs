@@ -2,7 +2,7 @@ module IOUtils (getInt, getInteger, getInts, getIntegers, getLineXTimes, readMul
 
 import Control.Monad
 
-getInteger :: IO (Integer)
+getInteger :: IO Integer
 getInteger = fmap read getLine
 
 getInt :: IO (Int)
