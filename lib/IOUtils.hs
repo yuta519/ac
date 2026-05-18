@@ -5,8 +5,7 @@ import Control.Monad
 getInteger :: IO Integer
 getInteger = fmap read getLine
 
-getInt :: IO (Int)
--- getInt = read <$> getLine
+getInt :: IO Int
 getInt = fmap read getLine
 
 getInts :: IO [Int]
