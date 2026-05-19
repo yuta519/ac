@@ -15,7 +15,6 @@ getIntegers :: IO [Integer]
 getIntegers = fmap read <$> words <$> getLine
 
 getLineXTimes :: Int -> IO [String]
--- getLineXTimes x = sequence $ replicate x getLine
 getLineXTimes x = replicateM x getLine
 
 readMultiLinesFile :: String -> IO [String]
