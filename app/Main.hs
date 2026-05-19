@@ -1,10 +1,10 @@
 module Main (main) where
 
-import ABC134
+import ABC135
 import IOUtils
 
 main :: IO ()
 main = do
-  [n, d] <- getInts
-
-  print $ solveB n d
+  [a, b] <- getInts
+  let res = solveA a b
+  if res > 0 then print res else putStrLn "IMPOSSIBLE"
