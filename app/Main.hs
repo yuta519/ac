@@ -6,5 +6,7 @@ import IOUtils
 main :: IO ()
 main = do
   [a, b] <- getInts
-  let res = solveA a b
-  if res > 0 then print res else putStrLn "IMPOSSIBLE"
+
+  case solveA a b of
+    Nothing -> putStrLn "IMPOSSIBLE"
+    Just k -> print k
