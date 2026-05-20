@@ -5,8 +5,8 @@ import IOUtils
 
 main :: IO ()
 main = do
-  [a, b] <- getInts
+  n <- getInt
+  ps <- getInts
 
-  case solveA a b of
-    Nothing -> putStrLn "IMPOSSIBLE"
-    Just k -> print k
+  let res = if solveB n ps then "YES" else "NO"
+  putStrLn res
