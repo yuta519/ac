@@ -9,7 +9,7 @@ getInt :: IO Int
 getInt = fmap read getLine
 
 getInts :: IO [Int]
-getInts = fmap read <$> words <$> getLine
+getInts = fmap read . words <$> getLine
 
 getIntegers :: IO [Integer]
 getIntegers = fmap read <$> words <$> getLine
