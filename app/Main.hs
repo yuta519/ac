@@ -1,12 +1,13 @@
 module Main (main) where
 
-import ABC135
+import ABC134
+import Control.Monad (forM_)
 import IOUtils
 
 main :: IO ()
 main = do
   n <- getInt
-  ps <- getInts
+  as <- getLineXTimes n
 
-  let res = if solveB n ps then "YES" else "NO"
-  putStrLn res
+  let res = solveC (map read as :: [Int])
+  forM_ res print
