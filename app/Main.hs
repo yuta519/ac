@@ -1,13 +1,10 @@
 module Main (main) where
 
-import ABC134
-import Control.Monad (forM_)
+import ABC136
 import IOUtils
 
 main :: IO ()
 main = do
-  n <- getInt
-  as <- getLineXTimes n
+  [a, b, c] <- getInts
 
-  let res = solveC $ map read as :: [Int]
-  forM_ res print
+  print $ solveA a b c
