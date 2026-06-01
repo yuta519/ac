@@ -9,5 +9,5 @@ main = do
   n <- getInt
   as <- getLineXTimes n
 
-  let res = solveC (map read as :: [Int])
+  let res = solveC $ map read as :: [Int]
   forM_ res print
