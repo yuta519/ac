@@ -12,7 +12,7 @@ getInts :: IO [Int]
 getInts = fmap read . words <$> getLine
 
 getIntegers :: IO [Integer]
-getIntegers = fmap read <$> words <$> getLine
+getIntegers = fmap read . words <$> getLine
 
 getLineXTimes :: Int -> IO [String]
 getLineXTimes x = replicateM x getLine
