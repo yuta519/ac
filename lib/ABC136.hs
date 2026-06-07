@@ -7,3 +7,12 @@ solveA a b c =
 
 solveB :: Int -> Int
 solveB n = length [i | i <- [1 .. n], odd $ length (show i)]
+
+solveC :: [Int] -> Bool
+solveC = go 0
+  where
+    go _ [] = True
+    go prev (h : hs)
+      | h - 1 >= prev = go (h - 1) hs
+      | h >= prev = go h hs
+      | otherwise = False

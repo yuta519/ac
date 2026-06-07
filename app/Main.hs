@@ -5,6 +5,7 @@ import IOUtils
 
 main :: IO ()
 main = do
-  n <- getInt
+  _ <- getLine
+  hs <- getInts
 
-  print $ solveB n
+  putStrLn $ if solveC hs then "Yes" else "No"
