@@ -1,11 +1,10 @@
 module Main (main) where
 
-import ABC136
+import ABC137
 import IOUtils
 
 main :: IO ()
 main = do
-  _ <- getLine
-  hs <- getInts
+  [a, b] <- getInts
 
-  putStrLn $ if solveC hs then "Yes" else "No"
+  print $ solveA a b
