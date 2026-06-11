@@ -5,6 +5,7 @@ import IOUtils
 
 main :: IO ()
 main = do
-  [k, x] <- getInts
+  n <- getInt
+  ss <- getLineXTimes n
 
-  putStrLn $ unwords $ map show $ solveB k x
+  print $ solveC ss
