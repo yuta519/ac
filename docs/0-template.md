@@ -55,6 +55,20 @@ What invariant does each step maintain?
 
 What data structures does it need? (heap, set, segment tree, union-find, ...)
 
+### Worked example
+
+Pick a small input and trace the algorithm step by step. A table works well — one row
+per step, columns for the input being processed and the data-structure state before/
+after. Highlight the moment the key invariant kicks in.
+
+```
+Step | Input | State after step | Notes
+  1  | ...   | ...              | ...
+  2  | ...   | ...              | ...
+```
+
+State the final answer and call out *which* step in the trace was the non-obvious one.
+
 ## 5. Check the complexity
 
 Time: ?
