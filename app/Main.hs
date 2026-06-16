@@ -8,4 +8,4 @@ main = do
   _ <- getInt
   as <- getInts
 
-  print $ solveB as
+  print $ solveC as
