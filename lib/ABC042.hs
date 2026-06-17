@@ -9,7 +9,7 @@ import Text.Read (readMaybe)
 solveA :: String -> String
 solveA syllables = if count 5 syls == 2 && count 7 syls == 1 then "YES" else "NO"
   where
-    syls = stringsToInts [s | s <- words syllables]
+    syls = stringsToInts $ words syllables
 
 count :: Int -> [Int] -> Int
 count x xs = length $ filter (== x) xs
