@@ -30,3 +30,10 @@ $ oj t -c "runghc -ilib app/Main.hs"
 ```bash
 $ rm test/*
 ```
+
+## Docs
+Notes and write-ups live under `docs/`:
+
+- [`docs/workflows.md`](docs/workflows.md) — the two workflows for solving a new problem vs. redoing a solved one (tag/branch conventions, `redo` script).
+- [`docs/solutions/`](docs/solutions/) — per-problem walkthroughs of how to arrive at the solution (not just the code). Start from [`0-template.md`](docs/solutions/0-template.md) when adding a new one.
+- [`docs/topics/`](docs/topics/) — cross-problem notes on techniques and roadmaps (e.g. tree DFS + prefix sums).
