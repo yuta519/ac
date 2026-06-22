@@ -16,3 +16,4 @@ dist-newstyle
 
 test/*
 .obsidian
+.DS_Store
