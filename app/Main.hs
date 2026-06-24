@@ -1,11 +1,22 @@
 module Main (main) where
 
-import ABC139
+import ATC001
+import Data.List (elemIndex)
+import Data.Maybe (mapMaybe)
 import IOUtils
 
 main :: IO ()
 main = do
-  s <- getLine
-  t <- getLine
+  [h, _] <- getInts
+  grid <- getLineXTimes h
+  let start = findStart grid
 
-  print $ solveA s t
+  putStrLn $ if solveA start grid then "Yes" else "No"
+
+findStart :: [String] -> (Int, Int)
+findStart grid = head $ mapMaybe findStartInRow (zip [0 ..] grid)
+  where
+    findStartInRow :: (Int, String) -> Maybe (Int, Int)
+    findStartInRow (x, row) = do
+      y <- elemIndex 's' row
+      pure (x, y)
