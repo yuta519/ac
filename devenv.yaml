@@ -1,7 +1,9 @@
 # yaml-language-server: $schema=https://devenv.sh/devenv.schema.json
 inputs:
   nixpkgs:
-    url: github:cachix/devenv-nixpkgs/rolling
+    # Pinned to a specific commit for cross-machine reproducibility.
+    # To upgrade: bump the rev below, run `devenv update`, commit both files.
+    url: github:cachix/devenv-nixpkgs/12866ae2dddbc0ab8b329915f8072bb9c75bde89
 
 # If you're using non-OSS software, you can set allowUnfree to true.
 # allowUnfree: true
