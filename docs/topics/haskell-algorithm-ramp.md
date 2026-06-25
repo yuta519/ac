@@ -84,6 +84,12 @@ find predicate xs
 
 This is the direct continuation from ATC001-A.
 
+> If the `visited` set gives you trouble in Haskell — passing it around correctly, or
+> getting TLE on a search that looks right — read
+> [`threading-state-through-recursion.md`](threading-state-through-recursion.md). It
+> covers the "mutable global vs. threaded state" gap head-on and has its own practice
+> ladder (#1 ATC001-A → #5 ABC138-D).
+
 | # | problem | link | practice focus |
 | - | ------- | ---- | -------------- |
 | 1 | ATC001-A: 深さ優先探索 | https://atcoder.jp/contests/atc001/tasks/dfs_a | Grid DFS, `visited`, four directions. |
