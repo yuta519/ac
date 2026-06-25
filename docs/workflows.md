@@ -23,6 +23,28 @@ The tags are immutable bookmarks. Branches move; tags don't.
 Backfilling is safe to re-run: the bulk-tag script in the project history scans for
 `feat: ABC<n>-<letter>` commits and creates any missing tags.
 
+### Backfilling a single tag by hand
+
+If you only need to recover one missing tag (e.g. you forgot the tag step in
+Workflow A, or backfilled a problem solved long ago), tag the commit *immediately
+before* its `feat:` solve commit:
+
+```sh
+# Find the solve commit, then tag its parent (the pre-solution state).
+git log --oneline | grep 'feat: ATC001-A'        # -> c8fc8d1 feat: ATC001-A
+git tag pre/atc001-a c8fc8d1^                     # ^ = parent = state before the solve
+
+# Or in one step, by message -- tags the parent of the matching commit:
+git tag pre/atc001-a "$(git log --oneline --grep 'feat: ATC001-A' --format=%H | tail -1)^"
+```
+
+The one-step form uses `tail -1` to pick the *earliest* matching commit, so a problem
+with several commits (e.g. a `temp` first pass, then a cleanup) still tags before the
+*first* attempt. Verify with `git show pre/atc001-a:lib/ATC001.hs` -- it should error
+("does not exist"), confirming the tag sits on a clean pre-solution state.
+
+Tags are local until pushed; run `git push --tags` if you want `pre/*` on the remote.
+
 ## Branch convention
 
 | name pattern              | role                                                       |
