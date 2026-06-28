@@ -2,7 +2,7 @@
 
 ## Overview
 This is the author's practice project to practice Haskell and work on [AtCoder](https://atcoder.jp/) problems with Haskell. 
-You can find AtCoder problems [here](https://kenkoooo.com/atcoder/#/table/) 
+You can find AtCoder problems from this [website](https://kenkoooo.com/atcoder/#/table/) 
 
 
 ## Requirements
