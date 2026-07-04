@@ -9,15 +9,8 @@ You can find AtCoder problems from this [website](https://kenkoooo.com/atcoder/#
 - [Nix](https://nixos.org/)
 - [devenv.sh](https://devenv.sh/getting-started/)
 
-## Run main 
-```bash
-$ runghc -ilib app/Main.hs
-or
-$ cabal build
-$ cabal run ac
-```
 
-## Test with online-judge-tools/oj
+## Run with online-judge-tools/oj
 - Download test cases
 ```bash
 $ oj download https://atcoder.jp/contests/abc166/tasks/abc166_c
@@ -29,6 +22,13 @@ $ oj t -c "runghc -ilib app/Main.hs"
 - Once you finished the problem, please remove test files under `test` directory
 ```bash
 $ rm test/*
+```
+## Run main 
+```bash
+$ runghc -ilib app/Main.hs
+or
+$ cabal build
+$ cabal run ac
 ```
 
 ## Docs
