@@ -4,8 +4,7 @@ solveA :: Int -> Int
 solveA n = n * n * n
 
 solveB :: [Int] -> [Int] -> [Int] -> Int
-solveB a b c = sum [go prev cur | (prev, cur) <- zip (0 : a) a]
+solveB a b c = base + bonus
   where
-    go prev cur
-      | prev /= 0 && prev == (cur - 1) = b !! (cur - 1) + c !! (cur - 2)
-      | otherwise = b !! (cur - 1)
+    base = sum [b !! (x - 1) | x <- a]
+    bonus = sum [c !! (x - 1) | (x, y) <- zip a (tail a), y == x + 1]
