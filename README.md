@@ -11,6 +11,7 @@ You can find AtCoder problems from this [website](https://kenkoooo.com/atcoder/#
 
 
 ## Run with online-judge-tools/oj
+You can run your codes with test cases which AtCoder prepares as samples. You need to install [oj](https://github.com/online-judge-tools/oj) in advance.
 - Download test cases
 ```bash
 $ oj download https://atcoder.jp/contests/abc166/tasks/abc166_c
