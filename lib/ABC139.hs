@@ -26,3 +26,6 @@ solveC hs = go 0 1 0
       | r >= n = max (r - l - 1) cur
       | arr ! (r - 1) >= arr ! r = go l (r + 1) (max (r - l - 1) cur)
       | otherwise = go r (r + 1) (max (r - l - 1) cur)
+
+solveD :: Int -> Int
+solveD n = n * (n - 1) `div` 2
