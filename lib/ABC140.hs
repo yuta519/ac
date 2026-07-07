@@ -14,4 +14,4 @@ solveC n b = h + l + r
   where
     h = head b
     l = last b
-    r = sum [min (b !! i) (b !! (i - 1)) | i <- [1 .. (n - 2)]]
+    r = sum [min x y | (x, y) <- zip b (tail b)]
