@@ -64,8 +64,7 @@ how you'd solve the same problem at different points in your learning.
 git checkout main
 git status                          # confirm "nothing to commit"
 
-# 2. Download samples
-ojd abc139 a
+# 2. Download the sample cases for the problem
 
 # 3. Set up the module
 #    - if lib/ABC139.hs doesn't exist, create it
@@ -109,8 +108,7 @@ redo abc137-d
 # Now: lib/ABC137.hs has no solveD, docs/solutions/ABC137-d.md doesn't exist,
 #      everything is back to the state before you'd solved D.
 
-# 3. Re-download samples (they aren't in the repo)
-ojd abc137 d
+# 3. Re-download the sample cases (they aren't in the repo)
 
 # 4. Solve from scratch — solveD doesn't exist on this branch.
 #    No peeking at your old solution.
@@ -161,7 +159,7 @@ git branch --list 'attempt/*-abc137-d'
 | ------------------- | ----------------------------------------- | ------------------------------------------ |
 | starting branch     | main                                      | main                                       |
 | start command       | edit cabal/Main, write module skeleton    | `redo abc<n>-<l>`                          |
-| download tests      | `ojd <contest> <letter>`                  | `ojd <contest> <letter>`                   |
+| download tests      | download the sample cases                 | download the sample cases                  |
 | iterate             | `oj t -c "runghc -ilib app/Main.hs"`      | same                                       |
 | tag                 | `git tag pre/abc<n>-<l> HEAD` before commit | already exists; nothing to do            |
 | commit destination  | main                                      | the attempt branch                         |
