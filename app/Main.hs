@@ -8,4 +8,4 @@ main :: IO ()
 main = do
   s <- getLine
 
-  putStrLn $ solveA s
+  putStrLn $ if solveB s then "Yes" else "No"
