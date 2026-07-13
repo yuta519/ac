@@ -7,7 +7,7 @@ solveA :: Int -> Int
 solveA n = n `div` 3
 
 solveB :: [String] -> String
-solveB s = if length (group $ sort $ s) == 3 then "Three" else "Four"
+solveB s = if length (group $ sort s) == 3 then "Three" else "Four"
 
 solveC :: [String] -> Int64
 solveC names =
