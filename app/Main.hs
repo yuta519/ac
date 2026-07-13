@@ -1,11 +1,11 @@
 module Main (main) where
 
 import ABC141
-
--- import IOUtils
+import IOUtils
 
 main :: IO ()
 main = do
-  s <- getLine
+  [n, k, q] <- getInts
+  a <- map read <$> getLineXTimes q
 
-  putStrLn $ if solveB s then "Yes" else "No"
+  mapM_ putStrLn $ solveC n k q a
