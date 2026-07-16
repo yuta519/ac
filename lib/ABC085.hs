@@ -4,11 +4,11 @@ import Data.Array (accumArray, elems)
 import Data.List
 
 solveA :: String -> String
-solveA s = (take 3 s) ++ "8" ++ (drop 4 s)
+solveA s = take 3 s ++ "8" ++ drop 4 s
 
 solveA' :: String -> String
 solveA' s =
-  let year = (read $ take 4 s) + 1
+  let year = read (take 4 s) + 1
       date = drop 4 s
    in show year ++ date
 
