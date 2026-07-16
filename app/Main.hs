@@ -1,10 +1,12 @@
 module Main (main) where
 
-import ABC088
+import ABC085
 import IOUtils
 
 main :: IO ()
 main = do
-  _ <- getLine
-  as <- getInts
-  print $ solveB as
+  n <- getInt
+  x <- getLineXTimes n
+  let d = [read y | y <- x] :: [Int]
+
+  print $ solveB d
