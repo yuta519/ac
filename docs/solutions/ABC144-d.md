@@ -47,6 +47,75 @@ A single linear formula can't span both because the cross-section triangle swaps
 two faces it touches at the half-full threshold. The guard is `2x` vs `a²b` (compare
 doubled to stay in integers and avoid a `/2` rounding question).
 
+### Visualizing it (side view)
+
+Look at the `a × a` cross-section; the prism runs depth `a` into the page. Tilt about the
+**bottom-right edge** until water reaches the top-right lip.
+
+The upright bottle — square base `a`, height `b`, full volume `a²·b`:
+
+```
+        a
+    ┌───────┐  ─┐
+    │       │   │
+    │       │   │  b   (height)
+    │       │   │
+    └───────┘  ─┘
+```
+
+**Case A — water at least half full (`x ≥ a²b/2`): an AIR wedge at the top.**
+Water still covers the whole base; the empty triangle sits top-left.
+
+```
+         a
+    ┌──────────┐
+    │∙∙∙╱      │   ∙ = air (triangle)
+    │∙∙╱       │   legs:  horizontal = a
+    │∙╱        │          vertical   = a·tanθ
+    │╱─────────│
+    │~~~~~~~~~~│   ~ = tilted water surface
+    │██████████│   █ = water
+    └──────────┘
+```
+
+`air = ½·a·(a·tanθ)·a = a³tanθ/2 = a²b − x`  →  `θ = atan( 2(a²b−x)/a³ )`
+
+**Case B — water less than half full (`x < a²b/2`): a WATER wedge at the bottom.**
+The surface drops below the top edge; the water itself is the triangle, bottom-right.
+
+```
+         a
+    ┌──────────┐
+    │∙∙∙∙∙∙∙∙∙∙│   ∙ = air
+    │∙∙∙∙╲∙∙∙∙∙│   ~ = tilted water surface
+    │∙∙∙∙∙╲~~~~│
+    │██████╲∙∙∙│   █ = water (triangle)
+    │███████╲∙∙│   legs:  vertical   = b
+    └──────────┘          horizontal = L = 2x/(ab)
+              L
+```
+
+`x = ½·L·b·a` → `L = 2x/(ab)`, and `tanθ = b/L`  →  `θ = atan( a·b²/(2x) )`
+
+**Pouring water out (decrease `x`), tilt held at the spill point** — the triangle
+migrates from top to bottom, passing through the corner-to-corner threshold:
+
+```
+  x large            x = a²b/2           x small
+  (Case A)          (threshold)          (Case B)
+ ┌────────┐         ┌────────┐          ┌────────┐
+ │∙╱      │         │╲       │          │∙∙∙∙∙∙∙∙│
+ │╱───────│         │∙╲      │          │∙∙∙∙∙╲∙∙│
+ │████████│         │∙∙╲~~~~~│          │██████╲∙│
+ │████████│         │███╲████│          │███████╲│
+ └────────┘         └────────┘          └────────┘
+  air triangle      surface runs         water triangle
+  shrinks up        corner-to-corner     shrinks down
+```
+
+At the threshold the surface runs bottom-right to top-left, giving `tanθ = b/a` from
+**both** formulas — the continuity check in §4.
+
 ## 4. Concrete algorithm (derivation)
 
 Let θ be the tilt angle.
