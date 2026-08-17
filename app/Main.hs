@@ -1,25 +1,10 @@
 module Main (main) where
 
-import ABC147
-import Control.Monad
-import IOUtils
+import ABC148
 
 main :: IO ()
 main = do
-  n <- getInt
-  xs <- replicateM n readTestimonies
+  _ <- getLine
+  [s, t] <- words <$> getLine
 
-  print $ solveC xs
-
--- Each person's block is a count followed by that many "x y" lines.
-readTestimonies :: IO [(Int, Int)]
-readTestimonies = do
-  a <- getInt
-  replicateM a readPair
-
-readPair :: IO (Int, Int)
-readPair = do
-  ns <- getInts
-  case ns of
-    [x, y] -> pure (x, y)
-    _ -> error "expected two integers"
+  putStrLn $ solveB s t
