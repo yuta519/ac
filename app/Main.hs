@@ -1,9 +1,11 @@
 module Main (main) where
 
 import ABC149
+import IOUtils
 
 main :: IO ()
 main = do
-  [s, t] <- words <$> getLine
+  [a, b, k] <- getInts
 
-  putStrLn $ solveA s t
+  let (x, y) = solveB a b k
+  putStrLn $ unwords [show x, show y]
