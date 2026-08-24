@@ -32,6 +32,66 @@ a = 2^p₁ · 3^p₂ · 5^p₃ ···
 b = 2^q₁ · 3^q₂ · 5^q₃ ···
 ```
 
+### Reading that notation
+
+`a` and `b` are just the two input numbers (the `a` and `b` of `solveC a b`). The claim is
+that **any** positive integer can be written as a product of prime powers, so write both
+inputs that way.
+
+```
+a = 2^p₁ · 3^p₂ · 5^p₃ · 7^p₄ ···
+    ↑      ↑      ↑      ↑
+    the primes, in order: 2, 3, 5, 7, 11, ...
+```
+
+The `p₁, p₂, p₃ …` are **exponents** — how many times each prime divides `a`. The subscript
+only numbers which prime slot it refers to:
+
+- `p₁` = exponent of 2 in `a`
+- `p₂` = exponent of 3 in `a`
+- `p₃` = exponent of 5 in `a`
+
+`q₁, q₂, q₃ …` are the same for `b`; a different letter only because it's a different
+number.
+
+With real values:
+
+```
+a = 12 = 2² · 3¹ · 5⁰ · 7⁰ ···     so  p₁=2, p₂=1, p₃=0, p₄=0, ...
+b = 18 = 2¹ · 3² · 5⁰ · 7⁰ ···     so  q₁=1, q₂=2, q₃=0, q₄=0, ...
+```
+
+Exponent `0` means that prime does not divide the number (`5⁰ = 1`, contributing nothing).
+The `···` is just "all remaining primes, every one with exponent 0" — so the product is
+finite in practice.
+
+### Lining the exponents up as a table
+
+This is the useful way to see it — one column per prime, handled independently:
+
+```
+   prime:      2      3      5     ...
+   ─────────────────────────────────────
+   a = 12:     2      1      0          ← p₁, p₂, p₃
+   b = 18:     1      2      0          ← q₁, q₂, q₃
+   ─────────────────────────────────────
+   gcd  min:   1      1      0     →  2¹·3¹ =  6
+   lcm  max:   2      2      0     →  2²·3² = 36
+```
+
+The framing turns a question about *numbers* into a question about **columns of
+exponents**, where gcd and lcm are simply `min` and `max`. Per column:
+
+```
+   min(2,1) + max(2,1) = 1 + 2 = 3 = 2 + 1     ← min + max = p + q
+```
+
+which is precisely why `gcd × lcm = a × b`.
+
+> These exponents are a **reasoning tool, never a computation.** Factorising is slow;
+> Euclid's algorithm returns `gcd` without finding a single prime factor. Use the table to
+> see *why* a formula is right, then use `gcd`.
+
 Then, **per prime**:
 
 ```
