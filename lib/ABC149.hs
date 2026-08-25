@@ -9,3 +9,8 @@ solveB a b k
   | a > 0 = if k <= a then (a - k, b) else solveB 0 b (k - a)
   | b > 0 = if k < b then (a, b - k) else solveB a 0 (k - b)
   | otherwise = solveB a b 0
+
+solveC :: Int -> Int
+solveC x
+  | null [i | i <- [2 .. floor $ sqrt $ fromIntegral x], x `mod` i == 0] = x
+  | otherwise = solveC (x + 1)

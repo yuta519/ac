@@ -5,7 +5,6 @@ import IOUtils
 
 main :: IO ()
 main = do
-  [a, b, k] <- getInts
+  x <- getInt
 
-  let (x, y) = solveB a b k
-  putStrLn $ unwords [show x, show y]
+  print $ solveC x
