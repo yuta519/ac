@@ -18,5 +18,4 @@ solveD as = if ans > 0 then length as - ans else -1
   where
     go t [] = t - 1
     go t (x : xs) = if t == x then go (t + 1) xs else go t xs
-
     ans = go 1 as
