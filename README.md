@@ -1,8 +1,7 @@
 # ac (AtCoder)
 
 ## Overview
-This repository is the author's private project to practice Haskell and work on [AtCoder](https://atcoder.jp/) problems with Haskell. 
-You can find AtCoder problems from this [website](https://kenkoooo.com/atcoder/#/table/) 
+This repository is a author's private project to work on [AtCoder](https://atcoder.jp/) problems with Haskell. You can find AtCoder problems from this [website](https://kenkoooo.com/atcoder/#/table/) 
 
 
 ## Requirements
