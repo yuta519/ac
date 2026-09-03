@@ -45,15 +45,3 @@ Notes and write-ups live under `docs/`:
 - [Knights and knaves: hypothesize-a-world, then verify](docs/topics/knights-and-knaves-consistency.md) — truth-teller/liar logic; propose-and-verify over propagate-and-deduce.
 - [GCD, LCM, and divisibility](docs/topics/gcd-lcm-and-divisibility.md) — the prime-exponent view, `gcd × lcm = a × b`, and the two overflow traps.
 
-### Solutions
-| Problem | Theme |
-|---|---|
-| [ABC137-D](docs/solutions/ABC137-d.md) | scheduling / greedy with a heap |
-| [ABC138-D](docs/solutions/ABC138-d.md) | tree DFS + prefix sums (Imos on a tree) |
-| [ABC139-C](docs/solutions/ABC139-c.md) | longest non-increasing run; adjacent comparisons, `!!` is O(n) |
-| [ABC142-D](docs/solutions/ABC142-d.md) | pairwise-coprime ⇒ count distinct primes of `gcd(A,B)` |
-| [ABC143-D](docs/solutions/ABC143-d.md) | fix two sides, binary-search the third |
-| [ABC144-D](docs/solutions/ABC144-d.md) | tilt geometry; two `atan` cases, radians → degrees |
-| [ABC146-C](docs/solutions/ABC146-c.md) | search space collapses from 1e9 candidates to 10 digit-bands |
-| [ABC147-C](docs/solutions/ABC147-c.md) | N ≤ 15 ⇒ enumerate all 2^N assignments, then verify |
-| [ABC150-C](docs/solutions/ABC150-c.md) | N ≤ 8 ⇒ enumerate all N!; `permutations` is not sorted |
