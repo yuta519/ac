@@ -12,6 +12,6 @@ sortDesc :: [Int] -> [Int]
 sortDesc = sortBy (flip compare)
 
 sub :: [Int] -> Int
-sub (a : b : xs) = (a - b) + (sub xs)
+sub (a : b : xs) = (a - b) + sub xs
 sub [a] = a
 sub [] = 0
