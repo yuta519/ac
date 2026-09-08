@@ -37,3 +37,5 @@ Notes and write-ups live under `docs/`:
 - [`docs/workflows.md`](docs/workflows.md) — the two workflows for solving a new problem vs. redoing a solved one (tag/branch conventions, `redo` script).
 - [`docs/solutions/`](docs/solutions/) — per-problem walkthroughs of how to arrive at the solution (not just the code). Start from [`0-template.md`](docs/solutions/0-template.md) when adding a new one.
 - [`docs/topics/`](docs/topics/) — cross-problem notes on techniques, concepts, and roadmaps.
+  Start with [`monads-in-practice.md`](docs/topics/monads-in-practice.md) if `do`, `>>=`, or
+  "monad" still feel like magic — it's built entirely from code already in this repo.

@@ -145,7 +145,10 @@ The threaded set does exactly what Python's mutable global did — it just trave
 
 You'll see the same shape as:
 - `foldl'` over a list, accumulator = "what I've seen / built so far"
-- the `State` monad (which is literally this threading, hidden behind `>>=`)
+- the `State` monad (which is literally this threading, hidden behind `>>=`) — cashed out
+  side-by-side against this doc's `go` fold in
+  [`monads-in-practice.md`](monads-in-practice.md) §8, including why the explicit version
+  here is still the better one
 - BFS, where the threaded thing is a *queue* plus a visited set (see ABC007-C)
 
 State-threading vs **memoization**: both avoid repeated work, but they're different.
