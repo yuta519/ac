@@ -1,10 +1,13 @@
 module Main (main) where
 
-import ABC152
+import ABC151
 import IOUtils
 
 main :: IO ()
 main = do
-  [a, b] <- getInts
+  [_, m] <- getInts
+  lns <- getLineXTimes m
+  let a = [(read $ head w, w !! 1) | l <- lns, let w = words l]
+      (ac, wa) = solveC a
 
-  print $ solveB a b
+  putStrLn $ unwords [show ac, show wa]
