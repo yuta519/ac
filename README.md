@@ -14,7 +14,7 @@ You can run your codes with test cases which AtCoder prepares as samples. You ne
 ```bash
 $ oj download https://atcoder.jp/contests/abc166/tasks/abc166_c
 ```
-- Run tests locally
+- Run unit tests locally
 ```bash
 $ oj t -c "runghc -ilib app/Main.hs"
 ```
