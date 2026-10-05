@@ -7,7 +7,6 @@ solveA a b c
   | otherwise = "No"
 
 solveB :: [Int] -> String
-solveB as = if null as'' then "APPROVED" else "DENIED"
+solveB as = if violation then "APPROVED" else "DENIED"
   where
-    as' = filter even as
-    as'' = filter (\x -> x `mod` 3 > 0 && x `mod` 5 > 0) as'
+    violation = not $ any (\x -> even x && x `mod` 3 /= 0 && x `mod` 5 /= 0) as
