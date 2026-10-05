@@ -5,7 +5,7 @@ import IOUtils
 
 main :: IO ()
 main = do
-  _ <- getLine
-  as <- getInts
+  x <- getInt
+  ss <- getLineXTimes x
 
-  putStrLn $ solveB as
+  mapM_ putStrLn $ solveC ss
