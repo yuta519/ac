@@ -7,3 +7,8 @@ solveB :: Int -> Int -> Int
 solveB n k = go 1
   where
     go cur = if n >= k ^ cur then go (cur + 1) else cur
+
+solveC :: [Int] -> Int
+solveC xs = sum [(x - mid) ^ 2 | x <- xs]
+  where
+    mid = round (fromIntegral (sum xs) / fromIntegral (length xs) :: Double)
