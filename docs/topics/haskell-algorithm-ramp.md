@@ -188,6 +188,84 @@ The key difference from grid DFS:
 - In a tree, passing `parent` is often enough to avoid going backward.
 - In a general graph or grid, use `visited`.
 
+## Stage 7: Binary search, and binary search on the answer
+
+This stage does not build on Stages 3 or 6. Traversal and binary search are separate
+families, so this can be done any time after Stage 1 — it is numbered last only to avoid
+renumbering the earlier stages.
+
+The tables below carry a `diff` column (AtCoder Problems difficulty estimate). That is new
+for this stage, and it exists because of a lesson from ABC155-D: **check the difficulty
+before concluding you are stuck.** A median ABC D is ~885. Nothing above ~1300 should feel
+routine yet.
+
+Two skills, in order. First the primitive — finding a boundary in a sorted array. Then the
+real move — searching over the *answer* instead of over the data.
+
+### 7a. The primitive: find the boundary in a sorted array
+
+| # | problem | link | diff | practice focus |
+| - | ------- | ---- | ---- | -------------- |
+| 1 | ABC143-D: Triangles | https://atcoder.jp/contests/abc143/tasks/abc143_d | 686 | Already solved, but the binary search is still the TODO in that note. Finish it. |
+| 2 | ABC205-D: Kth Excluded | https://atcoder.jp/contests/abc205/tasks/abc205_d | 713 | "K-th smallest" answered by binary searching a count. Gentlest version of the ABC155-D idea. |
+| 3 | ABC248-D: Range Count Query | https://atcoder.jp/contests/abc248/tasks/abc248_d | 793 | Lower/upper bound per value, many queries. Pairs with Stage 5's "build the world once". |
+
+The primitive, written once and reused:
+
+```hs
+-- first index in [0..len] where a monotone predicate flips False -> True
+lowerBound :: (Int -> Bool) -> Int -> Int
+lowerBound p len = go 0 len
+  where
+    go lo hi
+      | lo >= hi = lo
+      | otherwise = let mid = (lo + hi) `div` 2
+                     in if p mid then go lo mid else go (mid + 1) hi
+```
+
+Use `div`, not `quot`. On a range that includes negatives, truncating division can fail to
+make progress and the search spins forever. See ABC155-D's note, Bug 2.
+
+### 7b. Binary search the answer
+
+The reframe: when the answer is hard to construct but easy to *check*, search for it.
+
+| # | problem | link | diff | practice focus |
+| - | ------- | ---- | ---- | -------------- |
+| 4 | ABC174-E: Logs | https://atcoder.jp/contests/abc174/tasks/abc174_e | 1227 | The cleanest introduction. Monotone feasibility, check is a one-line sum. Write this one first. |
+| 5 | ABC144-E: Gluttony | https://atcoder.jp/contests/abc144/tasks/abc144_e | 1449 | Binary search the answer where the check is a greedy pairing, not arithmetic. |
+
+Shape:
+
+```hs
+-- answer = smallest x that is feasible; `ok` must be monotone in x
+go lo hi
+  | lo >= hi = lo
+  | otherwise = let mid = (lo + hi) `div` 2
+                 in if ok mid then go lo mid else go (mid + 1) hi
+```
+
+The whole difficulty of a problem in this family is writing `ok`. The search itself is
+five lines and always the same.
+
+### 7c. Count instead of enumerate (capstone)
+
+| # | problem | link | diff | practice focus |
+| - | ------- | ---- | ---- | -------------- |
+| 6 | ABC155-D: Pairs | https://atcoder.jp/contests/abc155/tasks/abc155_d | 1845 | K-th smallest of 2×10¹⁰ products. Sign-split counting. Full write-up in `docs/solutions/ABC155-d.md`. |
+| 7 | ABC149-E: Handshake | https://atcoder.jp/contests/abc149/tasks/abc149_e | 1905 | Same shape, sums instead of products, all values positive — so no sign split. Harder rating, easier idea. |
+
+Both are far above the rest of this roadmap. They are listed as a destination, not as the
+next thing to attempt.
+
+Phrase to remember:
+
+> If the thing you want is too big to build, stop building it and start counting it.
+
+And the companion, for why the search is exact:
+
+> `count ≤ X` only steps up at real elements, so the X you land on is a real answer.
+
 ## Suggested 4-week plan
 
 | week | target |
@@ -196,6 +274,7 @@ The key difference from grid DFS:
 | 2 | ATC001-A, then ABC007-C. Compare DFS and BFS. |
 | 3 | Sets/maps/frequency problems. Treat them as "visited, but for data." |
 | 4 | Prefix sums, then ABC126-D or ABC138-D if you feel ready. |
+| 5+ | Stage 7a, then ABC174-E. Binary search is a separate family — no need to wait for the tree stage. |
 
 Do not worry if this takes longer than four weeks. Re-solving old problems is often
 more valuable than forcing new ones.
@@ -211,5 +290,12 @@ You are ready for the next stage when you can answer these without looking:
 - What prevents repeated work?
 - Is this a reachability problem, shortest-path problem, counting problem, or
   precomputation problem?
+
+For Stage 7 specifically:
+
+- Is the answer easier to *check* than to *construct*? If so, search for it.
+- What makes my predicate monotone? If it isn't monotone, binary search is invalid.
+- Am I about to build a collection I only need the size of?
+- What are the search bounds, and can `lo + hi` overflow?
 
 When those questions become natural, the code gets much less mysterious.
