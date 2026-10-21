@@ -12,3 +12,4 @@ solveC :: [Int] -> Int
 solveC xs = sum [(x - mid) ^ 2 | x <- xs]
   where
     mid = round (fromIntegral (sum xs) / fromIntegral (length xs) :: Double)
+
