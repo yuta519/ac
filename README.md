@@ -9,7 +9,7 @@ This repository is the author's private project to work on [AtCoder](https://atc
 - [Nix](https://nixos.org/)
 - [devenv.sh](https://devenv.sh/getting-started/)
 
-## Run with online-judge-tool
+## Run with online-judge-tool (oj)
 
 You can run your codes with test cases which AtCoder prepares as samples. You need to install [oj](https://github.com/online-judge-tools/oj) in advance.
 
