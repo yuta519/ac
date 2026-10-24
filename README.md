@@ -35,9 +35,7 @@ $ rm test/*
 
 ```bash
 $ runghc -ilib app/Main.hs
-
 or
-
 $ cabal build
 $ cabal run ac
 ```
