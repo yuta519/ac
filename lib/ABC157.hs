@@ -17,10 +17,10 @@ solveA n = (n + 2 - 1) `div` 2
 solveC :: Int -> Int -> Int
 solveC a b = traceShow a' traceShow b' (go a' b')
   where
-    a' = a * 100 `div` 8
+    a' = (a * 100 + 8-1) `div` 8
     b' = b * 100 `div` 10
     go a' b'
       | a' == b' = a'
       | a' > b' && (a' `div` 10) == b = a'
-      | a' < b' && (b' `div` 8) == a = b'
+      | a' < b' && (b' * 8 `div` 100) == a = b'
       | otherwise = -1
