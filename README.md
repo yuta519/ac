@@ -2,8 +2,7 @@
 
 ## Overview
 
-This repository is an author's private project to work on [AtCoder](https://atcoder.jp/) problems with Haskell.
-You can find AtCoder problems from this [website](https://kenkoooo.com/atcoder/#/table/).
+This repository is an author's private project to work on [AtCoder](https://atcoder.jp/) problems with Haskell. You can find AtCoder problems from this [website](https://kenkoooo.com/atcoder/#/table/).
 
 ## Requirements
 
