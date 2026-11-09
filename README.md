@@ -1,4 +1,4 @@
-# ac (AtCoder)
+# ac (AtCoder) practice
 
 ## Overview
 
